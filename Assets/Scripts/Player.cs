@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Player
+public class Player : MonoBehaviour
 {
     public string name;
     public List<Card> hand;
+    public TextMeshProUGUI handText;
     public int chips;
     public int bet;
 
@@ -17,9 +19,17 @@ public class Player
         bet = 0;
     }
 
+    private void Start()
+    {
+        hand = new List<Card>();
+        bet = 0;
+    }
+
     public void AddCardToHand(Card card)
     {
         hand.Add(card);
+        handText.text += card.ToString();
+
     }
 
     public void ClearHand()

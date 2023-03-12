@@ -27,7 +27,7 @@ public enum Rank
     Ace
 }
 
-public class Card : MonoBehaviour
+public class Card
 {
     public Suit suit;
     public Rank rank;

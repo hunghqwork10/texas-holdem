@@ -17,15 +17,22 @@ public class Game : MonoBehaviour
     public Dictionary<Player, int> bets = new Dictionary<Player, int>();
     public int pot = 0;
 
+    [SerializeField] Dealer dealer;
+
     public void Start()
     {
         // Set up the game
+        dealer.Init();
+        StartRound(Round.PreFlop);
     }
 
     public void StartRound(Round round)
     {
         currentRound = round;
+
         // Deal cards and update UI
+        dealer.players = this.players;
+        dealer.DealCards();
     }
 
     public void EndRound()
