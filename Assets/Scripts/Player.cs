@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public List<Card> hand;
     public TextMeshProUGUI handText;
     public int chips;
+    public int startingChips = 1000;
     public int bet;
 
     public Player(string name, int chips)
@@ -21,6 +22,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+       
+    }
+
+    private void OnEnable()
+    {
         hand = new List<Card>();
         bet = 0;
     }
@@ -32,9 +38,16 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Reset()
+    {
+        ClearHand();
+        //chips = startingChips;
+    }
+
     public void ClearHand()
     {
         hand.Clear();
+        handText.text = string.Empty;
     }
 
     public int GetHandValue(List<Card> communityCards)
