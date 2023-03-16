@@ -44,15 +44,24 @@ public class Dealer : MonoBehaviour
         }
     }
 
-    public void DealCards()
+    public void DealHoleCards()
     {
         ShuffleDeck(deck);
         for (int i = 0; i < 2; i++)
         {
             foreach (Player player in players)
             {
-                player.AddCardToHand(deck[0]);
+                Card card = deck[0];
                 deck.RemoveAt(0);
+                if (player.isLocalPlayer)
+                {
+                    player.AddCardToHand(card);
+                }
+                else
+                {
+                    card.isHidden = true;
+                    player.AddCardToHand(card);
+                }
             }
         }
     }

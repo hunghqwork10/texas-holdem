@@ -6,6 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public string name;
+    public bool isLocalPlayer;
     public List<Card> hand;
     public TextMeshProUGUI handText;
     public int chips;
@@ -36,6 +37,15 @@ public class Player : MonoBehaviour
         hand.Add(card);
         handText.text += card.ToString();
 
+    }
+
+    public void ShowHiddenCard()
+    {
+        handText.text = string.Empty;
+        foreach(var card in hand)
+        {
+            handText.text += card.GetCardString();
+        }
     }
 
     public void Reset()

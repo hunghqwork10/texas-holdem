@@ -31,14 +31,16 @@ public class Card
 {
     public Suit suit;
     public Rank rank;
+    public bool isHidden;
 
     public Card(Suit suit, Rank rank)
     {
         this.suit = suit;
         this.rank = rank;
+        this.isHidden = false;
     }
 
-    public override string ToString()
+    public string GetCardString()
     {
         string rankStr;
         switch (rank)
@@ -62,7 +64,23 @@ public class Card
                 rankStr = ((int)rank).ToString();
                 break;
         }
+
         string suitStr = suit.ToString().ToLower().Substring(0, 1);
         return rankStr + suitStr;
+    }
+
+    public string GetHiddenString()
+    {
+        return "X";
+    }
+
+    public override string ToString()
+    {
+        if (isHidden)
+        {
+            return GetHiddenString();
+        }
+
+        return GetCardString();
     }
 }

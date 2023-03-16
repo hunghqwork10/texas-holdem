@@ -36,7 +36,7 @@ public class Game : MonoBehaviour
         {
             case Round.PreFlop:
                 dealer.players = this.players;
-                dealer.DealCards();
+                dealer.DealHoleCards();
                 break;
             case Round.Flop:
                 dealer.DealFlop();

@@ -45,5 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  isLocalPlayer: 0
+  handText: {fileID: 0}
   chips: 0
+  startingChips: 0
   bet: 0
