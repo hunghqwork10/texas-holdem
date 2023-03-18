@@ -201,7 +201,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5105171148674100232}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ShowHiddenCard
+        m_MethodName: ShowHiddenHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

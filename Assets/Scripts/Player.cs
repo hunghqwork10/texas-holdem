@@ -39,13 +39,24 @@ public class Player : MonoBehaviour
 
     }
 
-    public void ShowHiddenCard()
+    public void ShowHiddenHand()
     {
         handText.text = string.Empty;
         foreach(var card in hand)
         {
             handText.text += card.GetCardString();
         }
+    }
+
+    public string GetHandString()
+    {
+        string handString = string.Empty;
+        foreach (var card in hand)
+        {
+            handString += card.GetCardString();
+        }
+
+        return handString;
     }
 
     public void Reset()
