@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public string name;
     public bool isLocalPlayer;
     public List<Card> hand;
-    public TextMeshProUGUI handText;
+    public TextMeshPro handText;
     public int chips;
     public int startingChips = 1000;
     public int bet;
